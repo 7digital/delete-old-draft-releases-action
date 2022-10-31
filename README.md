@@ -31,7 +31,7 @@ jobs:
   delete-drafts:
     runs-on: ubuntu-latest
     steps:
-      - uses: 7digital/delete-old-draft-releases-action
+      - uses: 7digital/delete-old-draft-releases-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-id: ${{ github.event.release.id }}
