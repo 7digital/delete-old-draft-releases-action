@@ -1,6 +1,6 @@
 FROM alpine:3
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash curl jq
 
 COPY delete-old-draft-releases.sh /delete-old-draft-releases.sh
 
