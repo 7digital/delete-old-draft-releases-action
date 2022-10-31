@@ -31,8 +31,12 @@ jobs:
   delete-drafts:
     runs-on: ubuntu-latest
     steps:
-      - uses: 7digital/delete-old-draft-releases
+      - uses: 7digital/delete-old-draft-releases-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-id: ${{ github.event.release.id }}
 ```
+
+## Limitations
+
+This action will only delete drafts in the last 100 releases.
