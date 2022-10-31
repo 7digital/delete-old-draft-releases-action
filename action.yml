@@ -1,0 +1,26 @@
+name: Delete Old Draft Releases
+author: 7digital
+description: Delete draft releases older than specified release
+inputs:
+  github-token:
+    description: GitHub token
+    required: true
+  release-id:
+    description: Latest GitHub release ID to keep
+    required: true
+  github-api-url:
+    description: GitHub API URL
+    required: true
+    default: ${{ github.api_url }}
+  github-repo:
+    description: GitHub repository
+    required: true
+    default: ${{ github.repository }}
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.github-api-url }}
+    - ${{ inputs.github-repo }}
+    - ${{ inputs.github-token }}
+    - ${{ inputs.release-id }}
